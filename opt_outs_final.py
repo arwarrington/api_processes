@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+#this script opts users out of separate hustle instances that aren't able to communicate directly with each other. 
 
 from requests import request
 import datetime
@@ -30,14 +31,14 @@ pt1=Table.from_dataframe(optout_granted)
 pt2=Table.from_dataframe(optout_paid)
 
 
-optout_process_granted = Hustle('austin.warrington@ppfa.org', 'SECRET')
+optout_process_granted = Hustle('email', 'SECRET')
 
 
-optout_process_paid = Hustle('austin.warrington+slbtxvkycp@ppfa.org', 'SECRET')
+optout_process_paid = Hustle('email', 'SECRET')
 
 
 
-granted_optouts=optout_process_granted.create_leads(pt1,'uji6PK22aV')
+granted_optouts=optout_process_granted.create_leads(pt1,'temp pass')
 
 
 for row in granted_optouts:
